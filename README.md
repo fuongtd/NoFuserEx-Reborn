@@ -1,5 +1,5 @@
-# NoFuserEx
-NoFuserEx is an open-source deobfuscator for ConfuserEx.
+# NoFuserEx-Reborn
+NoFuserEx-Reborn is an open-source deobfuscator for ConfuserEx.
 License: MIT.
 
 ## Usage
