@@ -1,0 +1,17 @@
+version: x.x.{build}
+branches:
+  only:
+  - master
+skip_tags: true
+image: Visual Studio 2015
+configuration: Release
+install:
+- cmd: git submodule update --init --recursive
+build_script:
+- cmd: >-
+    appveyor-retry nuget restore NoFuserEx/NoFuserEx.sln
+    
+    msbuild NoFuserEx/NoFuserEx.sln /p:Configuration=Release /m /verbosity:normal /p:WarningLevel=0 /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
+artifacts:
+- path: NoFuserEx/
+  name: NoFuserEx
